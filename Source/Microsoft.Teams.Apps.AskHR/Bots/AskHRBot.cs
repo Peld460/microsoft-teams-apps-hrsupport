@@ -40,22 +40,22 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
         /// <summary>
         /// Show the Welcome message.
         /// </summary>
-        public const string WelcomeMsg = "Hola";
+        public const string WelcomeMsg = "hola";
 
         /// <summary>
         /// TakeAtour - text that triggers take a tour action for the user.
         /// </summary>
-        public const string TakeATour = "Que puedo hacer";
+        public const string TakeATour = "que puedo hacer";
 
         /// <summary>
         /// AskAnExpert - text that renders the ask an expert card.
         /// </summary>
-        public const string AskAnExpert = "Solicitar ayuda";
+        public const string AskAnExpert = "solicitar ayuda";
 
         /// <summary>
         /// Feedback - text that renders share feedback card.
         /// </summary>
-        public const string ShareFeedback = "Enviar feedback";
+        public const string ShareFeedback = "enviar feedback";
 
         private readonly string expectedTenantId;
         private readonly TelemetryClient telemetryClient;
