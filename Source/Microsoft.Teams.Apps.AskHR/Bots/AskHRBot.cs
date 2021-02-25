@@ -35,22 +35,27 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
         /// <summary>
         /// TeamTour - text that triggers team tour action.
         /// </summary>
-        public const string TeamTour = "team tour";
+        public const string TeamTour = "Instrucciones";
+
+        /// <summary>
+        /// Show the Welcome message.
+        /// </summary>
+        public const string WelcomeMsg = "Hola";
 
         /// <summary>
         /// TakeAtour - text that triggers take a tour action for the user.
         /// </summary>
-        public const string TakeATour = "take a tour";
+        public const string TakeATour = "Que puedo hacer";
 
         /// <summary>
         /// AskAnExpert - text that renders the ask an expert card.
         /// </summary>
-        public const string AskAnExpert = "ask an expert";
+        public const string AskAnExpert = "Solicitar ayuda";
 
         /// <summary>
         /// Feedback - text that renders share feedback card.
         /// </summary>
-        public const string ShareFeedback = "share feedback";
+        public const string ShareFeedback = "Enviar feedback";
 
         private readonly string expectedTenantId;
         private readonly TelemetryClient telemetryClient;
@@ -254,6 +259,13 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
                     this.telemetryClient.TrackTrace("Sending user tour card");
                     var userTourCards = TourCarousel.GetUserTourCards(this.appBaseUri);
                     await turnContext.SendActivityAsync(MessageFactory.Carousel(userTourCards));
+                    break;
+
+                case WelcomeMsg:
+                    this.telemetryClient.TrackTrace("The user as required the Welcome screen");
+                    var welcomeText = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.WelcomeMessageText);
+                    var userWelcomeCardAttachment = WelcomeCard.GetCard(welcomeText);
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(userWelcomeCardAttachment));
                     break;
 
                 default:
