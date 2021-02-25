@@ -242,6 +242,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             }
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
+            this.telemetryClient.TrackTrace("Se ha enviado esta solicitud:" + text);
 
             switch (text)
             {
@@ -331,6 +332,8 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             Attachment userCard = null;         // Acknowledgement to the user
             TicketEntity newTicket = null;      // New ticket
 
+            this.telemetryClient.TrackTrace("Otro envio: " + message.Text)
+
             switch (message.Text)
             {
                 case AskAnExpert:
@@ -350,6 +353,12 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
                         await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard(responseCardPayload)));
                         break;
                     }
+                case WelcomeCard:
+                    this.telemetryClient.TrackTrace("The user as required the Welcome screen");
+                    var welcomeText = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.WelcomeMessageText);
+                    var userWelcomeCardAttachment = WelcomeCard.GetCard(welcomeText);
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(userWelcomeCardAttachment));
+                    break;
 
                 case AskAnExpertCard.AskAnExpertSubmitText:
                     {
