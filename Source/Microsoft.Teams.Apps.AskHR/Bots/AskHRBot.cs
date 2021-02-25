@@ -242,7 +242,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             }
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
-            this.telemetryClient.TrackTrace("Se ha enviado esta solicitud:" + text);
+            this.telemetryClient.TrackTrace($"Se ha enviado esta solicitud: {text}" );
 
             switch (text)
             {
@@ -332,7 +332,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             Attachment userCard = null;         // Acknowledgement to the user
             TicketEntity newTicket = null;      // New ticket
 
-            this.telemetryClient.TrackTrace("Otro envio: " + message.Text)
+            this.telemetryClient.TrackTrace($"Otro envio: {message.Text}");
 
             switch (message.Text)
             {
