@@ -353,7 +353,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
                         await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard(responseCardPayload)));
                         break;
                     }
-                case WelcomeCard:
+                case WelcomeMsg:
                     this.telemetryClient.TrackTrace("The user as required the Welcome screen");
                     var welcomeText = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.WelcomeMessageText);
                     var userWelcomeCardAttachment = WelcomeCard.GetCard(welcomeText);
