@@ -35,7 +35,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
         /// <summary>
         /// TeamTour - text that triggers team tour action.
         /// </summary>
-        public const string TeamTour = "Instrucciones";
+        public const string TeamTour = "instrucciones";
 
         /// <summary>
         /// Show the Welcome message.
