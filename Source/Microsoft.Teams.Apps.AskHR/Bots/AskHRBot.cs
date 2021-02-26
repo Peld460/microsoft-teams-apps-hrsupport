@@ -242,7 +242,7 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
             }
 
             string text = (message.Text ?? string.Empty).Trim().ToLower();
-            this.telemetryClient.TrackTrace($"Se ha enviado esta solicitud: {text}" );
+            this.telemetryClient.TrackTrace($"Se ha enviado esta solicitud: {text}");
 
             switch (text)
             {
@@ -266,7 +266,9 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
                     this.telemetryClient.TrackTrace("The user as required the Welcome screen");
                     var welcomeText = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.WelcomeMessageText);
                     var userWelcomeCardAttachment = WelcomeCard.GetCard(welcomeText);
+                    var userWelcomeCardAttachment2 = WelcomeCardPreguntas.GetCard(Resource.WelcomeTeamCardContent);
                     await turnContext.SendActivityAsync(MessageFactory.Attachment(userWelcomeCardAttachment));
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(userWelcomeCardAttachment2));
                     break;
 
                 default:

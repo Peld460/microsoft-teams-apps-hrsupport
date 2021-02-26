@@ -1,4 +1,4 @@
-﻿// <copyright file="WelcomeCard.cs" company="Microsoft">
+// <copyright file="WelcomeCard2.cs" company="Microsoft">
 // Copyright (c) Microsoft. All rights reserved.
 // </copyright>
 
@@ -14,7 +14,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
     /// <summary>
     ///  This class process Welcome Card, when bot is installed by the user in personal scope.
     /// </summary>
-    public class WelcomeCard
+    public class WelcomeCardPreguntas
     {
         /// <summary>
         /// This method will construct the user welcome card when bot is added in personal scope.
@@ -32,6 +32,22 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                         HorizontalAlignment = AdaptiveHorizontalAlignment.Left,
                         Text = welcomeText,
                         Wrap = true
+                    }
+                },
+                Actions = new List<AdaptiveAction>
+                {
+                    new AdaptiveSubmitAction
+                    {
+                        Title = Resource.TakeATourButtonText,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = Resource.TakeATourButtonText,
+                              Text = AskHRBot.TakeATour
+                            }
+                        },
                     }
                 }
             };
