@@ -25,30 +25,139 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         {
             AdaptiveCard userWelcomeCard = new AdaptiveCard("1.0")
             {
-                Body = new List<AdaptiveElement>
-                {
-                    new AdaptiveTextBlock
-                    {
-                        HorizontalAlignment = AdaptiveHorizontalAlignment.Left,
-                        Text = welcomeText,
-                        Wrap = true
-                    }
-                },
                 Actions = new List<AdaptiveAction>
                 {
                     new AdaptiveSubmitAction
                     {
-                        Title = Resource.TakeATourButtonText,
+                        Title = AskHRBot.ComoSacoTurno,
                         Data = new TeamsAdaptiveSubmitActionData
                         {
                             MsTeams = new CardAction
                             {
                               Type = ActionTypes.MessageBack,
-                              DisplayText = Resource.TakeATourButtonText,
-                              Text = AskHRBot.TakeATour
+                              DisplayText = AskHRBot.ComoSacoTurno,
+                              Text = AskHRBot.ComoSacoTurno
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoCanceloTurno,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoCanceloTurno,
+                              Text = AskHRBot.ComoCanceloTurno
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.QueHagoRetire,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.QueHagoRetire,
+                              Text = AskHRBot.QueHagoRetire
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.QuePuedoRetirar,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.QuePuedoRetirar,
+                              Text = AskHRBot.QuePuedoRetirar
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoTrasladoEdificio,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoTrasladoEdificio,
+                              Text = AskHRBot.ComoTrasladoEdificio
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoReservoCochera,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoReservoCochera,
+                              Text = AskHRBot.ComoReservoCochera
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoSolicitoTaxi,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoSolicitoTaxi,
+                              Text = AskHRBot.ComoSolicitoTaxi
+                            }
+                        },
+                    },                   
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoGenerousuario,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoGenerousuario,
+                              Text = AskHRBot.ComoGenerousuario
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.ComoTiempo,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.ComoTiempo,
+                              Text = AskHRBot.ComoTiempo
+                            }
+                        },
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = AskHRBot.PuedoSolicitar,
+                        Data = new TeamsAdaptiveSubmitActionData
+                        {
+                            MsTeams = new CardAction
+                            {
+                              Type = ActionTypes.MessageBack,
+                              DisplayText = AskHRBot.PuedoSolicitar,
+                              Text = AskHRBot.PuedoSolicitar
                             }
                         },
                     }
+                    
                 }
             };
 

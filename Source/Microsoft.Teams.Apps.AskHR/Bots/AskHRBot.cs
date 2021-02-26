@@ -57,6 +57,57 @@ namespace Microsoft.Teams.Apps.AskHR.Bots
         /// </summary>
         public const string ShareFeedback = "enviar feedback";
 
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoSacoTurno = "¿Cómo saco un turno?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoCanceloTurno = "¿Cómo cancelo el turno?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string QueHagoRetire = "¿Qué hago si ya retiré mis cosas?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string QuePuedoRetirar = "¿Qué puedo retirar?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoTrasladoEdificio = "¿Cómo me traslado al edificio?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoReservoCochera = "¿Cómo reservo cochera?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoSolicitoTaxi = "¿Cómo solicito un taxi/remis?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoGenerousuario = "¿Cómo genero un usuario en MAB?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string ComoTiempo = "¿Cuánto tiempo tengo para retirar mis cosas?";
+
+        /// <summary>
+        /// Feedback - text that renders share feedback card.
+        /// </summary>
+        public const string PuedoSolicitar = "¿Puedo solicitar más de un turno para mí?";
+
+
         private readonly string expectedTenantId;
         private readonly TelemetryClient telemetryClient;
         private readonly IConfigurationProvider configurationProvider;
